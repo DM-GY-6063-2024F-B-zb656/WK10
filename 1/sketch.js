@@ -4,6 +4,8 @@ class Movey {
     this.pos = createVector(x, y);
     this.vel = createVector(random(-10, 10), random(-10, 10));
     this.rad = random(15, 25);
+    this.bloop = loadSound("../assets/bloop-0.mp3");
+    this.bloop.playMode("untilDone");
   }
 
   updateAndDraw(others) {
@@ -32,6 +34,7 @@ class Movey {
 
     if (overlap) {
       fill(255,0,0);
+      this.bloop.play();
     } else {
       fill(255);
     }
